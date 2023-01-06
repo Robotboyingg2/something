@@ -359,7 +359,7 @@ MovementSection:NewKeybind("Highjump", "Highjump", Enum.KeyCode.H, function()--s
 end)
 
 
-MovementSection:NewKeybind("PlayerTp", "PlayerTp", Enum.KeyCode.T, function()
+MovementSection:NewKeybind("PlayerTp", "PlayerTp", Enum.KeyCode.P, function()
 local Dist = math.huge 
 local Target = nil
 for i, v in pairs(game.Players:GetChildren()) do
