@@ -302,7 +302,11 @@ end)
 end)
 
 
-MovementSection:NewToggle("damagExploit", "ToggleInfo", function(state)
+
+
+MovementSection:NewDropdown("DropdownText", "DropdownInf", {"damagExploit", "Flight", "Option 3"}, function(currentOption)
+   
+Section:NewToggle("damagExploit", "ToggleInfo", function(state)
     if state then
         _G.TP = true
         while wait(0.005) and _G.TP == true do
@@ -314,14 +318,15 @@ MovementSection:NewToggle("damagExploit", "ToggleInfo", function(state)
         game:GetService("Workspace").Gravity = 196.2
     end
 end)
+   
 
-
-MovementSection:NewKeybind("Flight", "Flight", Enum.KeyCode.R, function()--springs even though its gravity lmao
+Section:NewKeybind("Flight", "Flight", Enum.KeyCode.R, function()--springs even though its gravity lmao
 	game.Workspace.Gravity = 0
     wait(2.4)
     game.Workspace.Gravity = 192.6
 end)
 
+end)
 
 MovementSection:NewKeybind("midTp", "midTp",Enum.KeyCode.U, function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").RespawnView.CFrame
