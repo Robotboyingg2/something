@@ -359,7 +359,7 @@ MovementSection:NewKeybind("Highjump", "Highjump", Enum.KeyCode.H, function()--s
 end)
 
 
-MovementSection:NewKeybind("PlayerTp", "Tp", Enum.KeyCode.T, function()
+MovementSection:NewKeybind("PlayerTp", "PlayerTp", Enum.KeyCode.T, function()
 local Dist = math.huge 
 local Target = nil
 for i, v in pairs(game.Players:GetChildren()) do
@@ -1075,32 +1075,7 @@ VisualsSection:NewButton("Minecraft Texturepack", "Minecraft Texturepack", funct
     end
 end)
 
-VisualsSection:NewButton("block exploit", "block exploit", function()
-local KnitClient = debug.getupvalue(require(game.Players.LocalPlayer.PlayerScripts.TS.knit).setup, 6)
-            KnitClient.Controllers.MapController.denyRegions = {}
-            local place = game:GetService("UserInputService").InputBegan:Connect(function(input)
-                if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                    local Position = game.Players.LocalPlayer:GetMouse().Hit
-                    local NewPosition = {
-                        X = math.round((Position.X/3)),
-                        Y = math.round((Position.Y/3)),
-                        Z = math.round((Position.Z/3)),
-                    }
-                    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-                        if v:IsA("Accessory") and v:FindFirstChild("Handle") and v.Handle:FindFirstChild("Left") then
-                            local args = {
-                                [1] = {
-                                    ["position"] = Vector3.new(NewPosition.X, NewPosition.Y, NewPosition.Z),
-                                    ["blockType"] = v.Name
-                                }
-                            }
 
-                            game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.PlaceBlock:InvokeServer(unpack(args))
-                        end
-                    end
-                end
-            end)
-end)
 
 --Utility
 
