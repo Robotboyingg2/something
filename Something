@@ -304,7 +304,7 @@ end)
 
 
 
-MovementSection:NewDropdown("DropdownText", "DropdownInf", {"damagExploit", "Flight", "Option 3"}, function(currentOption)
+MovementSection:NewDropdown("fly modes", "DropdownInf", {"damagExploit", "Flight", "Option 3"}, function(currentOption)
    
 Section:NewToggle("damagExploit", "ToggleInfo", function(state)
     if state then
@@ -1269,4 +1269,4 @@ function whitelisted()
 	return false
 end
 
-notify("Has succesfully loaded!", "LiquidBounce", 3)
+notify("Has succesfully loaded!", "LiquidBounce", 3) 
