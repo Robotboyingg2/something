@@ -306,7 +306,7 @@ end)
 
 MovementSection:NewDropdown("fly modes", "DropdownInf", {"damagExploit", "Flight", "Option 3"}, function(currentOption)
    
-Section:NewToggle("damagExploit", "ToggleInfo", function(state)
+MovementSection:NewToggle("damagExploit", "ToggleInfo", function(state)
     if state then
         _G.TP = true
         while wait(0.005) and _G.TP == true do
@@ -320,7 +320,7 @@ Section:NewToggle("damagExploit", "ToggleInfo", function(state)
 end)
    
 
-Section:NewKeybind("Flight", "Flight", Enum.KeyCode.R, function()--springs even though its gravity lmao
+MovementSection:NewKeybind("Flight", "Flight", Enum.KeyCode.R, function()--springs even though its gravity lmao
 	game.Workspace.Gravity = 0
     wait(2.4)
     game.Workspace.Gravity = 192.6
