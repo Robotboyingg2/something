@@ -241,7 +241,20 @@ CombatSection:NewToggle("Velocity", "Velocity", function(state)--springs
     end
 end)
 
---Movement
+--Movement--Movement
+
+MovementSection:NewToggle("Sprint", "Automatically on your sprint", function(state) 
+         if state then 
+                 BindToStepped("Sprint", 1, function() 
+                         if SprintCont.sprinting == false then 
+                                 SprintCont:startSprinting() 
+                         end 
+                 end) 
+         else 
+                 UnbindFromStepped("Sprint") 
+                 SprintCont:stopSprinting() 
+         end 
+ end) 
 
 MovementSection:NewToggle("AcSpeed1", "CFrame lol", function(state)--springs
     if state then
@@ -302,10 +315,6 @@ end)
 end)
 
 
-
-
-MovementSection:NewDropdown("fly modes", "DropdownInf", {"damagExploit", "Flight", "Option 3"}, function(currentOption)
-   
 MovementSection:NewToggle("damagExploit", "ToggleInfo", function(state)
     if state then
         _G.TP = true
@@ -318,7 +327,7 @@ MovementSection:NewToggle("damagExploit", "ToggleInfo", function(state)
         game:GetService("Workspace").Gravity = 196.2
     end
 end)
-   
+
 
 MovementSection:NewKeybind("Flight", "Flight", Enum.KeyCode.R, function()--springs even though its gravity lmao
 	game.Workspace.Gravity = 0
@@ -326,7 +335,6 @@ MovementSection:NewKeybind("Flight", "Flight", Enum.KeyCode.R, function()--sprin
     game.Workspace.Gravity = 192.6
 end)
 
-end)
 
 MovementSection:NewKeybind("midTp", "midTp",Enum.KeyCode.U, function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").RespawnView.CFrame
@@ -1269,4 +1277,4 @@ function whitelisted()
 	return false
 end
 
-notify("Has succesfully loaded!", "LiquidBounce", 3) 
+notify("Has succesfully loaded!", "LiquidBounce", 3)
