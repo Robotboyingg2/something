@@ -1208,11 +1208,6 @@ UtilitySection:NewSlider("Gravity", "Gravity", 192.6, 1, function(grav) -- 500 (
     game.Workspace.Gravity = gravity
 end)
 
-UtilitySection:NewButton("god mode", "you can only breaks beds lol", function()
-while wait() do
-   game:GetService("ReplicatedStorage").rbxts_include.node_modules["@rbxts"].net.out._NetManaged.xslvIlgobZtxrUudVfIdypzlxnqzja:FireServer()
-end
-end)
 
 --Scripts - This is where if you want to add something extra, put it here
 
@@ -1222,6 +1217,10 @@ end)
 
 ScriptsSection:NewButton("infinity yield", "infinity yield", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+ScriptsSection:NewButton("vape", "vape", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 end)
 
 local tableofrandom = {"8C403AE6-9477-4CA1-832C-B5975D0F0C49","EB8A0EF1-FF95-48C5-BDB0-E6C218230C63","81B43368-D44E-4662-B4AB-B3564A78A155", "6823994F-EDB0-4494-AD45-D248EC4CD070", "83E8CB3C-33B5-4ECB-A4A2-86121EE0E17C"}
