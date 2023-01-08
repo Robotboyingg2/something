@@ -241,20 +241,9 @@ CombatSection:NewToggle("Velocity", "Velocity", function(state)--springs
     end
 end)
 
---Movement--Movement
+--Movement
 
-MovementSection:NewToggle("Sprint", "Automatically on your sprint", function(state) 
-         if state then 
-                 BindToStepped("Sprint", 1, function() 
-                         if SprintCont.sprinting == false then 
-                                 SprintCont:startSprinting() 
-                         end 
-                 end) 
-         else 
-                 UnbindFromStepped("Sprint") 
-                 SprintCont:stopSprinting() 
-         end 
- end) 
+
 
 MovementSection:NewToggle("AcSpeed1", "CFrame lol", function(state)--springs
     if state then
