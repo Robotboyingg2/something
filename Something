@@ -859,7 +859,7 @@ end)
 
 --Scripts - This is where if you want to add something extra, put it here
 
-Section:NewButton("keyboard", "ButtonInfo", function()
+ScriptsSection:NewButton("keyboard", "ButtonInfo", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
 end)
 
